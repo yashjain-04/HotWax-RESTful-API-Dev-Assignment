@@ -1,5 +1,55 @@
 # HotWax-RESTful-API-Dev-Assignment
 
+## 🛠️ Tech Stack
+- **Framework:** Spring Boot 3.5.9
+- **ORM:** Spring Data JPA (Hibernate)
+- **Database:** MySQL
+- **Build Tool:** Maven
+
+---
+
+## 🚀 How to Run
+
+### Database Setup
+- Create a MySQL database named `oms`.
+
+### Configuration
+- Navigate to `src/main/resources/`.
+- Rename `application.properties.example` to `application.properties`.
+- Update the following properties with your local MySQL credentials:
+  - `spring.datasource.username`
+  - `spring.datasource.password`
+
+### Run the Application
+- Execute the application.
+- The database schema and master data (**Customers, Products, and Addresses**) will be automatically initialized using:
+  - `schema.sql`
+  - `data.sql`
+
+---
+
+## 🗄️ Database Design
+
+The system implements a relational database schema with the following entities:
+
+- **Customer**  
+  Stores customer identity and basic information.
+
+- **ContactMech**  
+  Manages shipping and billing addresses.
+
+- **Product**  
+  Stores the product catalog.
+
+- **OrderHeader**  
+  Links customers to their orders and associated addresses.
+
+- **OrderItem**  
+  Manages individual order line items using a composite key  
+  (`order_id + order_item_seq_id`).
+
+---
+
 ## 📸 API Scenarios & Endpoints
 
 ### 1. Create an Order
